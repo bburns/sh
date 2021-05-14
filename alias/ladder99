@@ -1,0 +1,2 @@
+#.
+alias venv='source ~/.venv/ladder99-venv/bin/activate'
