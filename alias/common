@@ -1,3 +1,6 @@
 # common to bash and zsh
+
 alias l='ls -l --group-directories-first'
 alias la='l -A'
+alias ..='cd ..'
+alias ...='cd ../..'
