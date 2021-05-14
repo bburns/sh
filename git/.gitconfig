@@ -1,0 +1,172 @@
+# git global config file
+#--------------------------------------------------------------------------------
+
+[user]
+  name = Brian Burns
+  email = bburns.km@gmail.com
+
+[core]
+  editor = code
+
+  # characters for commit hashes
+  abbrev = 7
+
+  # line endings to use for text files in working directory
+  # default is native
+  # default uses the native line ending for your platform, 
+  # or CRLF if core.autocrlf is set
+  eol = lf
+
+  # Checkout Windows-style, commit Unix-style (core.autocrlf = true)
+  # Checkout as-is, commit Unix-style (core.autocrlf = input)
+  # Checkout as-is, commit as-is (core.autocrlf = false)
+  # The first option is the default on Windows.
+  autocrlf = false
+
+
+[diff]
+  # use meld for git difftool
+  # tool = meld
+
+[difftool "meld"]
+  # cmd = c:/app/dev/meld/meld.exe $LOCAL $REMOTE
+
+[web]
+  # browser = offbyone
+
+#[credential]
+  #	helper = wincred
+
+[push]
+  # default is simple in git v2.0
+  default = simple
+  followTags = true
+
+[branch]
+  # tells git-branch and git-checkout to setup new branches so that
+  # git-pull(1) will appropriately merge from that remote branch.
+  # Recommended. Without this, you will have to add --track to your
+  # branch command or manually merge remote tracking branches with
+  # "fetch" and then "merge".
+  autosetupmerge = true
+
+[color]
+  # colors: normal, black, red, green, yellow, blue, magenta, cyan, white
+  # modifiers: bold, dim, ul, blink and reverse
+  # first color is foreground, second is background
+
+  # can set branch, diff, interactive, status. or ui for all of them -
+  # A boolean to enable/disable color in the output of git-branch(1). May be set
+  # to always, false (or never) or auto (or true), in which case colors are used
+  # only when the output is to a terminal. Defaults to false.
+
+  # nowork?
+  ui = always
+  # ui = auto
+
+  # pager = true
+
+[color "branch"]
+
+  current = green bold
+  remote = red bold
+  # local =
+
+[color "status"]
+
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+
+[color "diff"]
+
+  meta = white
+  frag = cyan bold
+  old = red bold
+  new = green bold
+  whitespace = green reverse
+
+[grep]
+  lineNumber = true
+  extendRegexp = true
+
+[hub]
+  protocol = https
+
+[alias]
+
+  s = !git -c color.status=always status
+  r = remote -v
+  b = !git -c color.branch=always branch -avv
+  ci = commit
+  co = checkout
+  last = log -1 HEAD
+  t = tag -n
+
+  unstage = reset HEAD --
+
+  up = checkout HEAD~1
+
+  cp = cherry-pick
+
+  tagn = tag -n
+
+  # diffs
+  d = !git -c color.diff=always diff
+  dc = diff --cached
+  dh = diff --cached HEAD^
+  ds = diff --stat
+  dw = diff --word-diff
+  wdiff = diff --ignore-space-at-eol
+
+  # shows files changed between two branches:
+  # A=added, M=modified, D=deleted
+  fdiff = diff --name-status HEAD..origin/master
+
+  g = !git grep --break --heading --line-number -e $1 HEAD HEAD~1 HEAD~2 HEAD~3
+
+  ls = ls-files
+  lsg = "!git ls-files | grep -i"
+
+
+  # log commands - show commits
+  #---------------------------------------------
+  # %h: abbreviated commit hash
+  # %s: subject
+  # %d: branch names
+  # %b: body
+  # %an: author name
+  # %ae: author email
+  # %C: color
+  # datetime: see https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
+  # %ad: author date (format respects --date= option)
+  # %ar: author date, relative
+  # %ai: author date, ISO 8601 format
+
+  # list commits in short form, with colors and branch/tag annotations
+  l = log --pretty=format:'%C(cyan)%h %C(reset)%ad %C(reset)%s%C(bold green)%d %C(reset)' --decorate --graph --source --all -20 --date=format:'%Y-%m-%d %H:%M' --
+
+  # show all
+  lall = log --pretty=format:'%C(cyan)%h %C(reset)%ad %C(reset)%s%C(bold green)%d %C(reset)' --decorate --graph --source --all --date=short --
+
+  # list commits showing changed files
+  # > git ln
+  # *1734f83 functional now (HEAD, newpost) 4 months ago <Brian Burns>|
+  # | 14    14      .gitignore
+  # | 6     4       _config.yml
+  # | 55    0       source/_posts/filter-lines.md
+  ln = log --pretty=format:'%C(cyan)%h %C(reset)%s%C(bold green)%d %C(reset)%ar %C(reset)<%an>' --decorate --graph --source --numstat --all --
+
+  # show timestamps
+  # > git lt
+  # *1734f83 2014-03-10 19:16:30 -0500 (HEAD, newpost) functional <Br
+  # *b93aec2 2014-03-07 07:58:20 -0600 modified landscape theme. decided to start fresh
+  # *96f2464 2014-02-20 04:56:51 -0600 new post <Brian Burns>
+  lt = log --pretty=format:'%C(cyan)%h %C(reset)%ai%C(bold green)%d %C(reset)%s%C(reset) <%an>' --decorate --graph --source --all --date=short --
+
+  # You can see all the commits related to a file, with the diff of the
+  # changes with git log -u
+  # eg
+  # > git lf books
+  lf = log -u --
+  # or just > git log books to see list of commits

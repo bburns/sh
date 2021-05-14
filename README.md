@@ -1,4 +1,3 @@
-# bash
+# sh
 
-Various bash and zsh settings
-
+Settings for bash and zsh and various applications
