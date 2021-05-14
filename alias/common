@@ -2,5 +2,7 @@
 
 alias l='ls -l --group-directories-first'
 alias la='l -A'
+alias lss='du -sh * | sort -h'
+
 alias ..='cd ..'
 alias ...='cd ../..'
