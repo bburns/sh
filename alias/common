@@ -6,3 +6,5 @@ alias lss='du -sh * | sort -h'
 
 alias ..='cd ..'
 alias ...='cd ../..'
+
+alias h='history'
