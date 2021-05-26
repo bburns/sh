@@ -14,18 +14,16 @@ To install, clone this repository -
 
 ## Aliases
 
-Add lines to .zshrc or .bash -
+For Mac, add lines to .zshrc and reload -
 
     echo "source ~/sh/alias/common" >> ~/.zshrc
     echo "source ~/sh/alias/macos" >> ~/.zshrc
+    source ~/.zshrc
+
+For Raspberry Pi, add lines to .bashrc and reload -
 
     echo "source ~/sh/alias/common" >> ~/.bashrc
     echo "source ~/sh/alias/macos" >> ~/.bashrc
-
-Then restart terminal or reload file -
-
-    source ~/.zshrc
-
     source ~/.bashrc
 
 
