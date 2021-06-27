@@ -1,0 +1,7 @@
+# aliases for macos
+
+# gls is the gnu version of ls, installed with `brew install coreutils`
+alias ls='gls'
+
+alias edit='open -a TextEdit'
+alias reload='source ~/sh/aliases/common && source ~/sh/aliases/mac'

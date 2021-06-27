@@ -1,6 +1,0 @@
-# aliases for macos
-
-alias ls='gls'
-alias edit='open -a TextEdit'
-alias reload='source ~/.zshrc'
-

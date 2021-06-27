@@ -16,14 +16,14 @@ To install, clone this repository -
 
 For Mac, add some lines to .zshrc and reload -
 
-    echo "source ~/sh/alias/common" >> ~/.zshrc
-    echo "source ~/sh/alias/macos" >> ~/.zshrc
+    echo "source ~/sh/aliases/common" >> ~/.zshrc
+    echo "source ~/sh/aliases/macos" >> ~/.zshrc
     source ~/.zshrc
 
 For Raspberry Pi, add some lines to .bashrc and reload -
 
-    echo "source ~/sh/alias/common" >> ~/.bashrc
-    echo "source ~/sh/alias/pi" >> ~/.bashrc
+    echo "source ~/sh/aliases/common" >> ~/.bashrc
+    echo "source ~/sh/aliases/pi" >> ~/.bashrc
     source ~/.bashrc
 
 
@@ -35,9 +35,9 @@ For git config, edit ~/.gitconfig to look like this -
     path = ~/sh/git/.gitconfig
 
     [github]
-    user = bburns
-    oauth-token =
+    user = <your userid>
     token = <your github token>
+    oauth-token =
 
 Changes will be available immediately.
 
@@ -46,13 +46,13 @@ Changes will be available immediately.
 
 To add more aliases, edit one of
 
-    alias/common
-    alias/macos
-    alias/pi
+    aliases/common
+    aliases/mac
+    aliases/pi
 
 or add an alias with eg
 
-    echo "alias pok='pokpok -p'" >> alias/common
+    echo "alias pok='pokpok -p'" >> aliases/common
 
 Then commit all changes to repo and push to GitHub
 
@@ -63,6 +63,10 @@ Then commit all changes to repo and push to GitHub
 To load the new aliases, all terminals will need to be restarted, or say (an alias)
 
     reload
+
+or on Mac could restart zshell with
+
+    exec zsh
 
 
 ## License

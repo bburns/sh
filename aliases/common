@@ -1,0 +1,17 @@
+# aliases common to bash and zsh
+
+alias l='ls -l --group-directories-first --color'
+alias la='l -A'
+alias look=l
+
+alias sizes='du -sh * | sort -h'
+
+alias go=pushd
+alias back=popd
+alias up='go ..'
+alias ..=up
+alias ...='go ../..'
+# alias ..='cd ..'
+# alias ...='cd ../..'
+
+alias h='history'
