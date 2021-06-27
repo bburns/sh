@@ -56,8 +56,14 @@ or add an alias with eg
 
 Then commit all changes to repo and push to GitHub
 
-    git commit -am "added alias"
+    git add .
+    git commit -m "added alias"
     git push
+
+To load the new aliases, all terminals will need to be restarted, or say one of
+
+    source ~/.zshrc
+    source ~/.bashrc
 
 
 ## License
