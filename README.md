@@ -60,10 +60,9 @@ Then commit all changes to repo and push to GitHub
     git commit -m "added alias"
     git push
 
-To load the new aliases, all terminals will need to be restarted, or say one of
+To load the new aliases, all terminals will need to be restarted, or say (an alias)
 
-    source ~/.zshrc
-    source ~/.bashrc
+    reload
 
 
 ## License
