@@ -1,2 +1,3 @@
-# raspberry pi
+# aliases for raspberry pi
+
 alias temp='echo `cat /sys/class/thermal/thermal_zone0/temp`*1.8/1000+32 | bc'

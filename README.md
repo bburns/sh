@@ -1,9 +1,9 @@
 # sh
 
-Settings for bash and zsh and various applications.
+Settings for bash, zsh, and git.
 
 
-## Install
+## Setup
 
 To install, clone this repository -
 
@@ -12,7 +12,7 @@ To install, clone this repository -
     cd sh
 
 
-## Aliases
+## Setup Aliases
 
 For Mac, add some lines to .zshrc and reload -
 
@@ -27,7 +27,7 @@ For Raspberry Pi, add some lines to .bashrc and reload -
     source ~/.bashrc
 
 
-## Git
+## Setup Git
 
 For git config, edit ~/.gitconfig to look like this - 
 
@@ -40,3 +40,26 @@ For git config, edit ~/.gitconfig to look like this -
     token = <your github token>
 
 Changes will be available immediately.
+
+
+## Developing
+
+To add more aliases, edit one of
+
+    alias/common
+    alias/macos
+    alias/pi
+
+or add an alias with eg
+
+    echo "alias pok='pokpok -p'" >> alias/common
+
+Then commit all changes to repo and push to GitHub
+
+    git commit -am "added alias"
+    git push
+
+
+## License
+
+MIT

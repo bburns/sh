@@ -1,4 +1,4 @@
-# common to bash and zsh
+# aliases common to bash and zsh
 
 alias l='ls -l --group-directories-first'
 alias la='l -A'
@@ -8,3 +8,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 alias h='history'
+
+alias go=pushd
+alias back=popd
+
